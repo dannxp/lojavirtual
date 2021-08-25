@@ -1,0 +1,53 @@
+<div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active" data-bs-interval="2000">
+        <img src="assets/foto1.jpeg" class="d-block w-100" alt="..." height="500px">
+      </div>
+      <div class="carousel-item" data-bs-interval="2000">
+        <img src="assets/foto2.jpeg" class="d-block w-100" alt="..." height="500px">
+      </div>
+      <div class="carousel-item" data-bs-interval="2000">
+        <img src="assets/foto3.jpeg" class="d-block w-100" alt="..." height="500px">
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Anterior</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Próximo</span>
+    </button>
+  </div>
+
+ <!-- Listagem de produtos -->
+<br />
+<div class="row row-cols-1 row-cols-md-3 g-4">
+  <div class="col" *ngFor="let produto of produtos">
+    <div class="card h-100">
+      <img
+        src="assets/{{produto.foto[0]}}"
+        class="card-img-top"
+        [alt]="produto.nome"
+      />
+      <div class="card-body">
+        <p class="card-text">
+          {{ produto.nome }}
+        </p>
+        <h5 class="text-center">
+          <strong>{{ produto.preco | currency:'BRL' }}</strong>
+        </h5>
+        <p class="text-center">
+          <a class="btn btn-outline-success" [routerLink]="['/produto/'+produto.id]">
+            <i class="bi bi-plus-lg">Detalhes</i>
+          </a>
+          &nbsp;
+          <a class="btn btn-outline-primary">
+            <i class="bi bi-cart">Carrinho</i>
+          </a>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+  
