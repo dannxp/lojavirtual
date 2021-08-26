@@ -25,58 +25,58 @@ export class ProdutoService {
 
   private getDescricao(): string[]{
     return[
-      /*
+      
 
-      ESPECIFICAÇÕES
- CPU:
+      'ESPECIFICAÇÕES',
+ 'CPU:',
 
-- Núcleos de CPU: 6
+'- Núcleos de CPU: 6',
 
-- Threads: 12
+'- Threads: 12',
 
-- Clock básico: 3.7GHz
+'- Clock básico: 3.7GHz',
 
-- Clock de Max Boost: Até 4.6GHz
+'- Clock de Max Boost: Até 4.6GHz',
 
-- Cachê L2 total: 3MB
+'- Cachê L2 total: 3MB',
 
-- Cachê L3 total: 32MB
+'- Cachê L3 total: 32MB',
 
-- Desbloqueado
+'- Desbloqueado',
 
-- CMOS: TSMC 7nm FinFET
+'- CMOS: TSMC 7nm FinFET',
 
-- Soquete: AM4
+'- Soquete: AM4',
 
-- Versão do PCI Express PCIe 4.0
+'- Versão do PCI Express PCIe 4.0',
 
-- Solução térmica (PIB): Wraith Stealth
+'- Solução térmica (PIB): Wraith Stealth',
 
-- TDP / TDP Padrão: 65W
+'- TDP / TDP Padrão: 65W',
 
- Memória:
+' Memória:',
 
-- Velocidade máxima: 3200MHz
+'- Velocidade máxima: 3200MHz',
 
-- Tipo: DDR4
+'- Tipo: DDR4',
 
-Tecnologias compatíveis:
+'Tecnologias compatíveis:',
 
-- Tecnologia AMD StoreMI
+'- Tecnologia AMD StoreMI',
 
-- Utilitário AMD Ryzen Master
+'- Utilitário AMD Ryzen Master',
 
-- AMD Ryzen VR-Ready Premium
+'- AMD Ryzen VR-Ready Premium',
 
-Conteúdo da Embalagem:
-- Processador AMD
-- Refrigeração Wraith Stealth
+'Conteúdo da Embalagem:',
+'- Processador AMD',
+'- Refrigeração Wraith Stealth',
 
-Garantia:
-12 meses de garantia
-Peso:
-410 gramas (bruto com embalagem)
-*/
+'Garantia:',
+'12 meses de garantia',
+'Peso:',
+'410 gramas (bruto com embalagem)',
+
     ]
   }
 
