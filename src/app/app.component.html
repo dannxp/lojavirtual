@@ -2,6 +2,8 @@
   <div class="container-fluid">
     <a class="navbar-brand text-white" [routerLink]="['']">E-commerce Explosão!</a>
     <form class="d-flex">
+      <i class="bi bi-search text-white "></i>
+      &nbsp;
       <input class="form-control me-2" type="search" placeholder="Pesquisar" aria-label="Search">
       <button class="btn btn-outline-info" type="submit">Pesquisar</button>
       &nbsp;
@@ -9,12 +11,13 @@
         <button class="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown"
           aria-expanded="false">
           <i class="bi bi-cart"></i>
-          <span class="badge rounded-pill bg-secondary">3</span>
+          <span class="badge rounded-pill bg-secondary">{{quantidade}}</span>
         </button>
         <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-end" aria-labelledby="dropdownMenuButton1">
-          <li class="dropdown-item">Action</li>
-          <li class="dropdown-item">Action2</li>
-          <li class="dropdown-item">Action3</li>
+          <li class="dropdown-item" *ngIf="quantidade ===0">Carrinho vazio</li>
+          <li class="dropdown-item" *ngFor="let item of itens">
+            {{item.produto.preco | currency: "BRL"}} ({{item.quantidade}})
+          </li>
         </ul>
       </div>
     </form>

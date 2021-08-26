@@ -1,12 +1,12 @@
 <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
     <div class="carousel-inner">
-      <div class="carousel-item active" data-bs-interval="2000">
+      <div class="carousel-item active" data-bs-interval="6000">
         <img src="assets/foto1.jpeg" class="d-block w-100" alt="..." height="500px">
       </div>
-      <div class="carousel-item" data-bs-interval="2000">
+      <div class="carousel-item" data-bs-interval="6000">
         <img src="assets/foto2.jpeg" class="d-block w-100" alt="..." height="500px">
       </div>
-      <div class="carousel-item" data-bs-interval="2000">
+      <div class="carousel-item" data-bs-interval="6000">
         <img src="assets/foto3.jpeg" class="d-block w-100" alt="..." height="500px">
       </div>
     </div>
@@ -27,22 +27,22 @@
     <div class="card h-100">
       <img
         src="assets/{{produto.foto[0]}}"
-        class="card-img-top"
+        class="card-img-top img-fluid"
         [alt]="produto.nome"
       />
-      <div class="card-body">
-        <p class="card-text">
+      <div class="card-body bg-dark">
+        <p class="card-text text-white">
           {{ produto.nome }}
         </p>
-        <h5 class="text-center">
+        <h5 class="text-center text-white">
           <strong>{{ produto.preco | currency:'BRL' }}</strong>
         </h5>
-        <p class="text-center">
-          <a class="btn btn-outline-success" [routerLink]="['/produto/'+produto.id]">
+        <p class="text-center text-white">
+          <a class="btn btn-outline-success text-white" [routerLink]="['/produto/'+produto.id]">
             <i class="bi bi-plus-lg">Detalhes</i>
           </a>
           &nbsp;
-          <a class="btn btn-outline-primary">
+          <a class="btn btn-outline-primary text-white" (click)="adicionarCarrinho(produto)">
             <i class="bi bi-cart">Carrinho</i>
           </a>
         </p>

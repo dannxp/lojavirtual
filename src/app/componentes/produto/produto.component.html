@@ -1,1 +1,39 @@
-
+<div class="row container-fluid" *ngIf="produto">
+    <div class="col">
+      <img
+        src="assets/{{ produto.foto[0] }}"
+        class="card-img-top img-fluid w-75"
+        [alt]="produto.nome"
+              />
+    </div>
+    <div class="col text-white container-fluid">
+      <br />
+      <h2>{{ produto.nome }}</h2>
+      <br />
+      <br />
+      <br />
+      <div class="alert alert-info container-fluid" role="alert">
+        <h5 class="text-center">
+          <strong>{{ produto.preco | currency: "BRL" }}</strong>
+        </h5>
+      </div>
+      <br />
+      <br />
+      <br />
+      <div class="text-center container-fluid">
+        <button type="button" class="btn btn-lg btn-outline-success text-white" (click)="adicionarCarrinho()">
+          <i class="bi bi-cart"></i> Adicionar ao carrinho
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="row container-fluid" *ngIf="produto">
+    <div class="col text-center text-white container-fluid">
+      <h3>Descrição do produto</h3>
+      <hr />
+      <p *ngFor="let descricao of produto.descricao" class="text-white">
+        {{ descricao }}
+      </p>
+    </div>
+  </div>
+  
