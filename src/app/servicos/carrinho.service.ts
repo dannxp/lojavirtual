@@ -10,7 +10,14 @@ export class CarrinhoService {
 
   private carrinho: Carrinho = new Carrinho([]);
 
-  constructor() { }
+  constructor(
+    
+  ) {
+    if(localStorage['carrinho']){
+      this.carrinho.itens = JSON.parse(localStorage['carrinho']);
+    }
+
+   }
 
   adicionar(produto: Produto){
     const index = this.carrinho.itens.findIndex(item => item.produto.id === produto.id);
@@ -21,7 +28,30 @@ export class CarrinhoService {
       this.carrinho.itens.push(item);
     }
     console.log("CARRINHO: ", this.carrinho);
+    localStorage['carrinho'] = JSON.stringify(this.carrinho.itens);
   }
+
+  remover(id: number){
+    const index = this.carrinho.itens.findIndex(
+      item => item.produto.id === id
+    );
+    if (index === -1){
+      return;
+    }
+    if(this.carrinho.itens[index].quantidade === 1){
+
+      this.carrinho.itens = this.carrinho.itens.filter(
+        item => item.produto.id !== id);
+    }else{
+      this.carrinho.itens[index].quantidade--;
+    }
+    localStorage['carrinho'] = JSON.stringify(this.carrinho.itens);
+  }
+    
+
+  
+  
+
 get total(){
   return this.carrinho.itens
   .map((item: ItemCarrinho) => item.produto.preco * item.quantidade)
